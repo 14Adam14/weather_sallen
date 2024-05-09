@@ -6,19 +6,22 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var isNight = false
+    
     
     var body: some View {
         
         ZStack {
             
-            BackgroudView(topColor: .blue, bottomColor: .lightBlue)
+            BackgroudView(isNight: $isNight)
             
             
             VStack{
                 CityNameView(cityName: "Cupertino, CA")
                 
                 
-                MainWeatherStatusView(imageName: "cloud.sun.fill", temperature: 76)
+                MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" :
+                                      "cloud.sun.fill", temperature: 76)
                     
                     
                     HStack(spacing: 26) {
@@ -44,7 +47,7 @@ struct ContentView: View {
                     
                 
                 Button(action: {
-                    print("dsd")
+                    isNight.toggle()
                 }, label: {
                     WeatherButton(title: "Change Day Time",
                                   textColor: .blue,
@@ -57,8 +60,6 @@ struct ContentView: View {
                 
                 
             }
-            
-            
             
         }
         
@@ -101,12 +102,11 @@ struct WeatherDayView: View {
 
 struct BackgroudView: View {
     
-    var topColor: Color
-    var bottomColor: Color
+    @Binding var isNight: Bool
     
     
     var body: some View {
-        LinearGradient(colors: [topColor, bottomColor], startPoint: .topLeading, endPoint: .bottomTrailing)
+        LinearGradient(colors: [isNight ? .black : .blue, isNight ? .gray : .lightBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea()
     }
 }
@@ -127,13 +127,14 @@ struct CityNameView: View {
 }
 
 
+
 struct MainWeatherStatusView:  View {
     
     var imageName: String
     var temperature: Int
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 20) {
             Image(systemName: imageName)
                 .renderingMode(.original)
                 .resizable()
