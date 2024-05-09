@@ -11,31 +11,14 @@ struct ContentView: View {
         
         ZStack {
             
-            LinearGradient(colors: [.blue, .lightBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea()
+            BackgroudView(topColor: .blue, bottomColor: .lightBlue)
             
             
             VStack{
-                Text("Cupertino, CA")
-                    .font(.system(size: 34, weight: .medium, design: .default))
-                    .foregroundStyle(.white)
-                    .padding(40)
+                CityNameView(cityName: "Cupertino, CA")
                 
                 
-                VStack(spacing: 10) {
-                    Image(systemName: "cloud.sun.fill")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 190, height: 190)
-                    
-                    
-                    Text("76°")
-                        .font(.system(size: 74, weight: .medium))
-                        .foregroundStyle(.white)
-                    
-                }
-                .padding(.bottom, 45)
+                MainWeatherStatusView(imageName: "cloud.sun.fill", temperature: 76)
                     
                     
                     HStack(spacing: 26) {
@@ -63,11 +46,9 @@ struct ContentView: View {
                 Button(action: {
                     print("dsd")
                 }, label: {
-                    Text("Change Day Time")
-                        .frame(width: 290, height: 60)
-                        .background(.white)
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                    WeatherButton(title: "Change Day Time",
+                                  textColor: .blue,
+                                  backgroundColor: .white)
                 })
                 
                 
@@ -116,3 +97,58 @@ struct WeatherDayView: View {
         }
     }
 }
+
+
+struct BackgroudView: View {
+    
+    var topColor: Color
+    var bottomColor: Color
+    
+    
+    var body: some View {
+        LinearGradient(colors: [topColor, bottomColor], startPoint: .topLeading, endPoint: .bottomTrailing)
+            .ignoresSafeArea()
+    }
+}
+
+
+struct CityNameView: View {
+    
+    var cityName: String
+    
+    var body: some View {
+        
+        Text(cityName)
+            .font(.system(size: 34, weight: .medium, design: .default))
+            .foregroundStyle(.white)
+            .padding(55)
+        
+    }
+}
+
+
+struct MainWeatherStatusView:  View {
+    
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 190, height: 190)
+            
+            
+            Text("\(temperature)°")
+                .font(.system(size: 74, weight: .medium))
+                .foregroundStyle(.white)
+            
+        }
+        .padding(.bottom, 55)
+    }
+}
+
+
+

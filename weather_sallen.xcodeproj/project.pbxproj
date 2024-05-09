@@ -11,6 +11,7 @@
 		A31433D42BEC25EB00DCB769 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31433D32BEC25EB00DCB769 /* ContentView.swift */; };
 		A31433D62BEC25EF00DCB769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31433D52BEC25EF00DCB769 /* Assets.xcassets */; };
 		A31433DA2BEC25EF00DCB769 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31433D92BEC25EF00DCB769 /* Preview Assets.xcassets */; };
+		A318F2D62BED0D9300B84DC9 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A318F2D52BED0D9300B84DC9 /* WeatherButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		A31433D52BEC25EF00DCB769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A31433D72BEC25EF00DCB769 /* weather_sallen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weather_sallen.entitlements; sourceTree = "<group>"; };
 		A31433D92BEC25EF00DCB769 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A318F2D52BED0D9300B84DC9 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				A31433D12BEC25EB00DCB769 /* weather_sallenApp.swift */,
 				A31433D32BEC25EB00DCB769 /* ContentView.swift */,
+				A318F2D52BED0D9300B84DC9 /* WeatherButton.swift */,
 				A31433D52BEC25EF00DCB769 /* Assets.xcassets */,
 				A31433D72BEC25EF00DCB769 /* weather_sallen.entitlements */,
 				A31433D82BEC25EF00DCB769 /* Preview Content */,
@@ -141,6 +144,7 @@
 			files = (
 				A31433D42BEC25EB00DCB769 /* ContentView.swift in Sources */,
 				A31433D22BEC25EB00DCB769 /* weather_sallenApp.swift in Sources */,
+				A318F2D62BED0D9300B84DC9 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
