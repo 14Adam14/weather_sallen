@@ -42,6 +42,8 @@ struct ContentView: View {
                                        tempereture: 51)
                     }
                     
+
+                    
                     Spacer()
                     
                     
@@ -83,7 +85,8 @@ struct WeatherDayView: View {
     var body: some View {
         VStack{
             Text(dayOfWeek)
-                .font(.system(size: 17, weight: .medium, design: .default))
+                //.font(.system(size: 17, weight: .medium, design: .default))
+                .font(.subheadline)
                 .foregroundStyle(.white)
             
             Image(systemName: imageName)
@@ -95,7 +98,8 @@ struct WeatherDayView: View {
                 .frame(width: 39, height: 39)
             
             Text("\(tempereture)°")
-                .font(.system(size: 29, weight: .medium, design: .default))
+                //.font(.system(size: 29, weight: .medium, design: .default))
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .foregroundStyle(.white)
         }
     }
@@ -126,9 +130,10 @@ struct CityNameView: View {
     var body: some View {
         
         Text(cityName)
-            .font(.system(size: 34, weight: .medium, design: .default))
+           // .font(.system(size: 34, weight: .medium, design: .default))
+            .font(.largeTitle)
             .foregroundStyle(.white)
-            .padding(55)
+            .padding()
         
     }
 }
@@ -146,11 +151,11 @@ struct MainWeatherStatusView:  View {
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 190, height: 190)
+                .frame(width: 180, height: 180)
             
             
             Text("\(temperature)°")
-                .font(.system(size: 74, weight: .medium))
+                .font(.system(size: 72, weight: .medium))
                 .foregroundStyle(.white)
             
         }
