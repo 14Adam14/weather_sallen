@@ -11,10 +11,17 @@ struct WeatherButton: View {
         
         Text(title)
             .frame(width: 290, height: 60)
-            .background(backgroundColor)
+            .background(backgroundColor.gradient)
             .foregroundStyle(textColor)
             .font(.system(size: 20, weight: .bold, design: .default))
             .clipShape(RoundedRectangle(cornerRadius: 15))
         
+    }
+}
+
+
+struct WeatherButtonPreviews: PreviewProvider {
+    static var previews: some View {
+        WeatherButton(title: "dsdsd", textColor: .white, backgroundColor: .blue)
     }
 }
